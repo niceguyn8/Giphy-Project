@@ -28,7 +28,7 @@ buttonGenerator();
 $("button").on("click", function() {
     var person = $(this).attr("data-person");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-      person + "&api_key=dc6zaTOxFJmzC&limit=20";
+      person + "&api_key=dc6zaTOxFJmzC&limit=1";
 
     $.ajax({
       url: queryURL,
@@ -48,7 +48,7 @@ $("button").on("click", function() {
       gifDiv.prepend(p);
       gifDiv.prepend(topicImage);
 
-      $("#topic-view").prepend(gifDiv);
+      $("#gif-view").prepend(gifDiv);
       }
     });
     });
