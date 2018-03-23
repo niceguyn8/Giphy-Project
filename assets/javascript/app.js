@@ -30,7 +30,7 @@ buttonGenerator();
 // when the buttons are clicked, generate a gif
 $("body").on("click", 'button', function() {
     var person = $(this).attr("data-person");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=dc6zaTOxFJmzC&limit=1";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=dc6zaTOxFJmzC&limit=10";
     // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=dc6zaTOxFJmzC&limit=1";
     console.log(queryURL);
     console.log("Person: ", person);
