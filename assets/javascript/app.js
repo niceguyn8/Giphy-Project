@@ -6,11 +6,14 @@ function buttonGenerator() {
   $('#button-view').empty();
   for (var i = 0; i < topics.length; i++) {
     var topicsButton = $('<button>').text(topics[i]);
+    topicsButton.attr("data-person", topics[i]);
     $('#button-view').append(topicsButton);
   }
 }
 
 // when topics button is clicked
+$(document).ready(function () {
+
 $('#topic-button').on('click', function(event) {
   event.preventDefault();
 
@@ -25,10 +28,12 @@ $('#topic-button').on('click', function(event) {
 buttonGenerator();
 
 // when the buttons are clicked, generate a gif
-$("button").on("click", function() {
+$("body").on("click", 'button', function() {
     var person = $(this).attr("data-person");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-      person + "&api_key=dc6zaTOxFJmzC&limit=1";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=dc6zaTOxFJmzC&limit=1";
+    // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=dc6zaTOxFJmzC&limit=1";
+    console.log(queryURL);
+    console.log("Person: ", person);
 
     $.ajax({
       url: queryURL,
@@ -49,6 +54,8 @@ $("button").on("click", function() {
       gifDiv.prepend(topicImage);
 
       $("#gif-view").prepend(gifDiv);
+      // buttonGenerator();
       }
     });
     });
+  });
