@@ -1,5 +1,5 @@
 // create array of topics
-var topics = ["ric flair", "macho man", "hulk hogan", "the rock",];
+var topics = ["Astronaut", "Race Car Driver", "Superhero", "Ninja", "Princess", "Doctor", "Firefighter", "Jedi"];
 
 // create function that makes Buttons
 function buttonGenerator() {
